@@ -1,19 +1,54 @@
-import { TextField } from "@mui/material";
-import { IInputProps, ITextFieldProps } from "props";
-import { useTheme } from "styled-components";
+import {
+  IInput,
+  IInputFieldsetProps,
+  IInputStyleProps,
+  ITextProps,
+} from "props";
+import { Container, Fieldset, Legend, StyledInput } from "./style";
+import { Text } from "..";
 
-export const Input = (props: IInputProps) => {
-  const { label } = props;
-  const theme = useTheme();
-  console.log(theme.colors.primary300);
-
-  const textFieldProps: ITextFieldProps = {
-    color: "primary",
-    size: "small",
-    label,
+export const Input = ({
+  rounded,
+  width,
+  legend,
+  variant,
+  placeholder,
+  error,
+  helperText,
+  isFullWidth,
+  endProps: EndProps,
+  ...props
+}: IInput) => {
+  const fieldsetProps: IInputFieldsetProps = {
+    rounded,
+    variant: variant ?? "outline",
+    error: !!error,
   };
 
-  
+  const styledInputProps: IInputStyleProps = {
+    ...props,
+    width,
+    variant: variant ?? "outline",
+    placeholder: ["outline", undefined].includes(variant)
+      ? placeholder
+      : legend ?? placeholder,
+  };
 
-  return <TextField {...textFieldProps} />;
+  const helperTextProps: ITextProps = {
+    color: "error",
+    size: "xs",
+    weight: "sxx",
+    children: helperText,
+  };
+
+  return (
+    <Container isFullWidth={!!isFullWidth}>
+      <Fieldset {...fieldsetProps}>
+        {variant !== "standart" && legend && <Legend>{legend}</Legend>}
+        <StyledInput {...styledInputProps} />
+        {EndProps && <EndProps />}
+      </Fieldset>
+      {helperText && <Text {...helperTextProps} />}
+    </Container>
+  );
 };

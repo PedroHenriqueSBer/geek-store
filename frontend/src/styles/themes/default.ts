@@ -20,10 +20,10 @@ const defaultTheme: DefaultTheme = {
     xs: "0.75rem",
     sm: "1rem",
     md: "2rem",
-    lg: "4rem",
-    xl: "6rem",
-    xxl: "8rem",
-    xxxl: "10rem",
+    lg: "6rem",
+    xl: "12rem",
+    xxl: "18rem",
+    xxxl: "24rem",
     full: "100%",
   },
   spacing: {
@@ -34,6 +34,17 @@ const defaultTheme: DefaultTheme = {
     lg: "24px",
     xl: "32px",
     full: "100%",
+  },
+  weight: {
+    sxxx: 100,
+    sxx: 200,
+    sx: 300,
+    sm: 400,
+    md: 500,
+    lg: 600,
+    xl: 700,
+    xxl: 800,
+    xxxl: 900,
   },
 };
 

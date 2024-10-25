@@ -1,9 +1,9 @@
-import { IContextProps } from "props";
+import { IElementProps } from "props";
 import { createTheme, ThemeProvider as MUITheProvider } from "@mui/material";
 import defaultTheme from "../styles/themes/default";
 import { ThemeProvider } from "styled-components";
 
-export const Providers = ({ children }: IContextProps) => {
+export const Providers = ({ children }: IElementProps) => {
   const theme = createTheme({
     palette: {
       primary: {

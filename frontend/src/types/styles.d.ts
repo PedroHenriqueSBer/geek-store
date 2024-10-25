@@ -36,5 +36,16 @@ declare module "styled-components" {
       xl: string;
       full: string;
     };
+    weight: {
+      sxxx: number,
+      sxx: number,
+      sx: number,
+      sm: number,
+      md: number,
+      lg: number,
+      xl: number,
+      xxl: number,
+      xxxl: number,
+    },
   }
 }
