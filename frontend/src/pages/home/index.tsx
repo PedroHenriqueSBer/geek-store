@@ -1,12 +1,13 @@
-import { Container } from "./style"
+import { Input } from "../../components/Input";
+import { Container } from "./style";
 
 export const Home = () => {
-
   return (
     <>
       <Container>
-        ddadsds
+        <Input label="outline" />
+        <Input label="standart" />
       </Container>
     </>
-  )
-}
+  );
+};
