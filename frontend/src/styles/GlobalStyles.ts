@@ -57,7 +57,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     min-height: 100vh;
     overflow-x: hidden;
-    background-color: ${({ theme }) => theme.colors.background200};
+    background-color: ${({ theme }) => theme.colors.background100};
   }
 
   button{

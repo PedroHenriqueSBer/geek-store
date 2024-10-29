@@ -17,17 +17,72 @@ declare module "props" {
     | "shadow";
 
   type ISize =
-    | "none"
-    | "xs"
-    | "sm"
-    | "md"
-    | "lg"
-    | "xl"
-    | "xxl"
-    | "xxxl"
-    | "full";
-
-  type ISpacing = "none" | "xs" | "sm" | "md" | "lg" | "xl" | "full";
+    | "0"
+    | "px"
+    | "0.5"
+    | "1"
+    | "1.5"
+    | "2"
+    | "2.5"
+    | "3"
+    | "3.5"
+    | "4"
+    | "5"
+    | "6"
+    | "7"
+    | "8"
+    | "9"
+    | "10"
+    | "11"
+    | "12"
+    | "14"
+    | "16"
+    | "20"
+    | "24"
+    | "28"
+    | "32"
+    | "36"
+    | "40"
+    | "44"
+    | "48"
+    | "52"
+    | "56"
+    | "60"
+    | "64"
+    | "72"
+    | "80"
+    | "96"
+    | "auto"
+    | "1/2"
+    | "1/3"
+    | "2/3"
+    | "1/4"
+    | "2/4"
+    | "3/4"
+    | "1/5"
+    | "2/5"
+    | "3/5"
+    | "4/5"
+    | "1/6"
+    | "2/6"
+    | "3/6"
+    | "4/6"
+    | "5/6"
+    | "1/12"
+    | "2/12"
+    | "3/12"
+    | "4/12"
+    | "5/12"
+    | "6/12"
+    | "7/12"
+    | "8/12"
+    | "9/12"
+    | "10/12"
+    | "11/12"
+    | "full"
+    | "min"
+    | "max"
+    | "fit";
 
   type IWeight =
     | "sxxx"
@@ -41,7 +96,7 @@ declare module "props" {
     | "xxxl";
 
   interface IInputFieldsetProps {
-    rounded?: ISpacing;
+    rounded?: ISize;
     variant?: "outline" | "standart";
     error?: boolean;
   }
@@ -56,12 +111,55 @@ declare module "props" {
       legend?: string;
       helperText?: string;
       isFullWidth?: boolean;
-      endProps?: () => import('react').JSX.Element
+      startProps?: () => import("react").JSX.Element;
+      endProps?: () => import("react").JSX.Element;
     };
 
   type ITextProps = IElementProps & {
     size?: ISize;
     color?: IColors;
     weight?: IWeight;
+  };
+
+  type IIconButton = import("react").ComponentProps<"button"> & {
+    color?: IColors;
+  };
+
+  type IButton = import("react").ComponentProps<"button"> & {
+    variant?: "standart" | "container";
+    width?: ISize;
+    color?: IColors;
+    colorDark?: IColors;
+  };
+
+  type IPosition =
+    | "flex-start"
+    | "flex-end"
+    | "center"
+    | "space-between"
+    | "auto";
+
+  type IBox = {
+    children: import("react").ReactNode;
+    color?: IColors;
+    width?: ISize;
+    padding?: ISize;
+    rounded?: ISize;
+    height?: ISize;
+    items?: IPosition;
+    justify?: IPosition;
+    direction?: "column" | "row";
+  };
+
+  type ISelectButton = {
+    value: any;
+    actualValue: any;
+    onSelected: (value: any) => void
+    children?: import("react").ReactNode;
+    color?: IColors;
+    width?: ISize;
+    height?: ISize;
+    rounded?: ISize;
+    padding?: ISize;
   };
 }

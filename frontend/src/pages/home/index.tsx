@@ -1,9 +1,11 @@
-import { IconButton } from "@mui/material";
-import { Input, Text } from "../../components";
+import { useTheme } from "styled-components";
+import { IconButton, Input, Text, Button, Box } from "../../components";
 import { Container, Content } from "./style";
 import { Eye } from "lucide-react";
 
 export const Home = () => {
+  const theme = useTheme();
+
   return (
     <>
       <Container>
@@ -14,23 +16,29 @@ export const Home = () => {
           <Input
             legend="standart error"
             variant="standart"
-            error
             helperText="Teste"
+            error
           />
-          <Text size="md">dasdads</Text>
+          <Text size="5">text</Text>
+          <Text size="12">title</Text>
         </Content>
-
         <Input legend="fullWidth" isFullWidth />
         <Content>
           <Input
             legend="eye"
             endProps={() => (
               <IconButton>
-                <Eye width={"1rem"} height={"1rem"} />
+                <Eye size={theme.size[5]} />
               </IconButton>
             )}
           />
+          <IconButton>
+            <Eye size={theme.size[5]} />
+          </IconButton>
+          <Button variant="standart">button standart</Button>
+          <Button>button container</Button>
         </Content>
+        <Box>dsadasd</Box>
       </Container>
     </>
   );

@@ -17,35 +17,83 @@ declare module "styled-components" {
       shadow: string;
     };
     size: {
-      none: string;
-      xs: string;
-      sm: string;
-      md: string;
-      lg: string;
-      xl: string;
-      xxl: string;
-      xxxl: string;
+      "0": string;
+      px: string;
+      "0.5": string;
+      "1": string;
+      "1.5": string;
+      "2": string;
+      "2.5": string;
+      "3": string;
+      "3.5": string;
+      "4": string;
+      "5": string;
+      "6": string;
+      "7": string;
+      "8": string;
+      "9": string;
+      "10": string;
+      "11": string;
+      "12": string;
+      "14": string;
+      "16": string;
+      "20": string;
+      "24": string;
+      "28": string;
+      "32": string;
+      "36": string;
+      "40": string;
+      "44": string;
+      "48": string;
+      "52": string;
+      "56": string;
+      "60": string;
+      "64": string;
+      "72": string;
+      "80": string;
+      "96": string;
+      auto: string;
+      "1/2": string;
+      "1/3": string;
+      "2/3": string;
+      "1/4": string;
+      "2/4": string;
+      "3/4": string;
+      "1/5": string;
+      "2/5": string;
+      "3/5": string;
+      "4/5": string;
+      "1/6": string;
+      "2/6": string;
+      "3/6": string;
+      "4/6": string;
+      "5/6": string;
+      "1/12": string;
+      "2/12": string;
+      "3/12": string;
+      "4/12": string;
+      "5/12": string;
+      "6/12": string;
+      "7/12": string;
+      "8/12": string;
+      "9/12": string;
+      "10/12": string;
+      "11/12": string;
       full: string;
-    };
-    spacing: {
-      none: string;
-      xs: string;
-      sm: string;
-      md: string;
-      lg: string;
-      xl: string;
-      full: string;
+      min: string;
+      max: string;
+      fit: string;
     };
     weight: {
-      sxxx: number,
-      sxx: number,
-      sx: number,
-      sm: number,
-      md: number,
-      lg: number,
-      xl: number,
-      xxl: number,
-      xxxl: number,
-    },
+      sxxx: number;
+      sxx: number;
+      sx: number;
+      sm: number;
+      md: number;
+      lg: number;
+      xl: number;
+      xxl: number;
+      xxxl: number;
+    };
   }
 }

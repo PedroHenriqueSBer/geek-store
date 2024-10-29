@@ -2,11 +2,12 @@ import { IInputFieldsetProps, IInputStyleProps } from "props";
 import styled from "styled-components";
 
 export const Container = styled.div<{ isFullWidth: boolean }>`
-  width: ${({ isFullWidth }) => isFullWidth ? 'auto' : 'fit-content'}
+  width: ${({ isFullWidth }) => (isFullWidth ? "100%" : "fit-content")};
 `;
 
 export const Fieldset = styled.fieldset<IInputFieldsetProps>`
   display: flex;
+  gap: ${({ theme }) => theme.size[2]};
   border: ${({ theme, variant, error }) =>
     variant === "outline"
       ? error
@@ -14,7 +15,7 @@ export const Fieldset = styled.fieldset<IInputFieldsetProps>`
         : `1px solid ${theme.colors.primary300}`
       : "none"};
   border-radius: ${({ theme, rounded, variant }) =>
-    variant === "outline" ? theme.spacing[rounded ?? "sm"] : "0"};
+    variant === "outline" ? theme.size[rounded ?? "3"] : "0"};
   border-bottom: ${({ theme, variant, error }) =>
     variant === "standart"
       ? error
@@ -29,7 +30,7 @@ export const Legend = styled.legend`
 `;
 
 export const StyledInput = styled.input<IInputStyleProps>`
-  width: ${({ theme, width }) => theme.size[width ?? "xxl"]};
+  width: ${({ theme, width }) => theme.size[width ?? "full"]};
   background: none;
   border: none;
   color: ${({ theme }) => theme.colors.primary300};

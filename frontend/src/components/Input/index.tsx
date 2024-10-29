@@ -17,6 +17,7 @@ export const Input = ({
   helperText,
   isFullWidth,
   endProps: EndProps,
+  startProps: StartProps,
   ...props
 }: IInput) => {
   const fieldsetProps: IInputFieldsetProps = {
@@ -36,7 +37,7 @@ export const Input = ({
 
   const helperTextProps: ITextProps = {
     color: "error",
-    size: "xs",
+    size: "10/12",
     weight: "sxx",
     children: helperText,
   };
@@ -45,6 +46,7 @@ export const Input = ({
     <Container isFullWidth={!!isFullWidth}>
       <Fieldset {...fieldsetProps}>
         {variant !== "standart" && legend && <Legend>{legend}</Legend>}
+        {StartProps && <StartProps />}
         <StyledInput {...styledInputProps} />
         {EndProps && <EndProps />}
       </Fieldset>
